@@ -1,6 +1,6 @@
 # whackamodel-cli
 
-Prebuilt binaries of the Blackbox ML Game CLI (`blackbox-ml-game`).
+Prebuilt binaries of the Blackbox ML Game CLI, installed as `whackamodel`.
 
 macOS / Linux:
 
@@ -14,4 +14,4 @@ Windows (PowerShell):
 irm https://raw.githubusercontent.com/0xDevansh/whackamodel-cli/main/install.ps1 | iex
 ```
 
-Installs to `~/.local/bin` (Linux/macOS, override with `INSTALL_DIR`) or `%LOCALAPPDATA%\blackbox-ml-game\bin` (Windows). Then run `blackbox-ml-game list`.
+Installs to `~/.local/bin` (Linux/macOS, override with `INSTALL_DIR`) or `%LOCALAPPDATA%\whackamodel\bin` (Windows). Then run `whackamodel list`.

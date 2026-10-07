@@ -1,12 +1,13 @@
 #!/bin/sh
-# Installer for blackbox-ml-game (whackamodel-cli).
+# Installer for whackamodel (installs the Blackbox ML Game CLI as `whackamodel`).
 # Usage: curl -fsSL https://raw.githubusercontent.com/0xDevansh/whackamodel-cli/main/install.sh | sh
 # Env: INSTALL_DIR (default ~/.local/bin)
 set -eu
 
 REPO="0xDevansh/whackamodel-cli"
 BRANCH="main"
-NAME="blackbox-ml-game"
+NAME="blackbox-ml-game"   # asset name in bin/
+CMD="whackamodel"         # installed command name
 BASE="https://raw.githubusercontent.com/$REPO/$BRANCH/bin"
 
 case "$(uname -s)" in
@@ -28,7 +29,7 @@ fi
 ext=""; [ "$os" = windows ] && ext=".exe"
 asset="$NAME-$os-$arch$ext"
 dir="${INSTALL_DIR:-$HOME/.local/bin}"
-dest="$dir/$NAME$ext"
+dest="$dir/$CMD$ext"
 tmp="$(mktemp)"
 trap 'rm -f "$tmp"' EXIT
 
@@ -49,7 +50,7 @@ chmod +x "$dest"
 
 echo "Installed: $dest"
 case ":$PATH:" in
-  *":$dir:"*) echo "Run: $NAME list" ;;
+  *":$dir:"*) echo "Run: $CMD list" ;;
   *) echo "Add it to your PATH:  export PATH=\"$dir:\$PATH\""
-     echo "Then run: $NAME list" ;;
+     echo "Then run: $CMD list" ;;
 esac
